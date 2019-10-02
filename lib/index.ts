@@ -1,4 +1,4 @@
-/// <reference types="nextcloud-typings" />
+/// <reference types="@nextcloud/typings" />
 
 type OCP16to17 = Nextcloud.v16.OCP | Nextcloud.v17.OCP
 declare var OCP: OCP16to17;
