@@ -1,8 +1,16 @@
-/// <reference types="@nextcloud/typings" />
+export function loadState<T>(app, key): T {
+    const elem = <HTMLInputElement>document.querySelector(`#initial-state-${app}-${key}`)
+    if (elem === null) {
+        const msg = `Could not find initial state ${key} of ${app}`
+        console.error(msg)
+        throw new Error(msg)
+    }
 
-type OCP16to17 = Nextcloud.v16.OCP | Nextcloud.v17.OCP
-declare var OCP: OCP16to17;
-
-export function loadState<T>(appId: string, key: string): T {
-    return OCP.InitialState.loadState<T>(appId, key)
+    try {
+        return JSON.parse(atob(elem.value))
+    } catch (e) {
+        const msg = `Could not parse initial state ${key} of ${app}`
+        console.error(msg)
+        throw new Error(msg)
+    }
 }
