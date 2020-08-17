@@ -4,6 +4,10 @@ test('throw if nothing found', () => {
     expect(() => loadState('test', 'key')).toThrow(new Error("Could not find initial state key of test"))
 })
 
+test('return default if provided', () => {
+    expect(loadState('test', 'key', 'default')).toBe('default')
+})
+
 test('find correct value', () => {
     const input = document.createElement('input')
     input.setAttribute('type', 'hidden')
