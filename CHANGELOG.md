@@ -28,7 +28,7 @@ All notable changes to this project will be documented in this file.
 
 ## 1.2.0 - 2020-04-06
 ### Added
-- Add optional fallback parameter to laodState method
+- Add optional fallback parameter to loadState method
 
 ## 1.1.2 - 2020-04-06
 ### Changed
