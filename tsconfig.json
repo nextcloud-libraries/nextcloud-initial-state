@@ -1,14 +1,15 @@
 {
+    "include": [
+        "./lib/**/*.ts"
+    ],
     "compilerOptions": {
-        "target": "es5",
-        "module": "commonjs",
+        "allowSyntheticDefaultImports": true,
+        "moduleResolution": "node",
+        "target": "ESNext",
+        "module": "esnext",
         "declaration": true,
-        "outDir": "./dist",
         "strict": true,
-        "lib": [
-            "es6",
-            "dom"
-        ],
         "noImplicitAny": false,
+        "outDir": "./dist"
     }
 }
