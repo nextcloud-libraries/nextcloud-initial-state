@@ -33,6 +33,7 @@
   "devDependencies": {
     "@rollup/plugin-typescript": "^8.3.2",
     "jest": "^28.0.3",
+    "jest-environment-jsdom": "^28.0.2",
     "rollup": "^2.71.1",
     "tslib": "^2.4.0",
     "typedoc": "^0.22.15",
