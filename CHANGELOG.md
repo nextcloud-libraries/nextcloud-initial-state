@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file.
 
+## 2.0.0 - 2022-08-23
+
+### Changed
+- Update dependencies
+- Add rollup to build
+- Remove babel
+  - Typescript already is able to generate code that is in compliance with es5
+- Add ESM support
+  - Improve native usage support
+  - Improve bundle size
+- Remove unnecessary files from npm package
+
 ## 1.2.1 - 2021-11-02
 ### Changed
 - Dependency updates

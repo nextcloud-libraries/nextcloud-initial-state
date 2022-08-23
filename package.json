@@ -1,14 +1,22 @@
 {
   "name": "@nextcloud/initial-state",
-  "version": "1.2.1",
-  "description": "",
+  "version": "2.0.0",
+  "description": "Access data from the nextcloud server-side initial state API within apps.",
   "main": "dist/index.js",
+  "module": "dist/index.esm.js",
   "types": "dist/index.d.ts",
+  "exports": {
+    "import": "./dist/index.esm.js",
+    "require": "./dist/index.js"
+  },
+  "files": [
+    "dist/"
+  ],
   "scripts": {
-    "build": "babel ./lib --out-dir dist --extensions '.ts,.tsx' --source-maps && tsc --emitDeclarationOnly",
-    "build:doc": "typedoc --mode file --out dist/doc lib/index.ts && touch dist/doc/.nojekyll",
-    "check-types": "tsc",
-    "dev": "babel ./lib --out-dir dist --extensions '.ts,.tsx' --watch",
+    "build": "rollup --config rollup.config.js",
+    "build:doc": "typedoc --out dist/doc lib/index.ts && touch dist/doc/.nojekyll",
+    "check-types": "tsc --noEmit",
+    "dev": "rollup --config rollup.config.js --watch",
     "test": "jest",
     "test:watch": "jest --watchAll"
   },
@@ -22,21 +30,13 @@
     "type": "git",
     "url": "https://github.com/nextcloud/nextcloud-initial-state"
   },
-  "dependencies": {
-    "core-js": "^3.6.4"
-  },
   "devDependencies": {
-    "@babel/cli": "^7.8.4",
-    "@babel/core": "^7.8.7",
-    "@babel/preset-env": "^7.8.7",
-    "@babel/preset-typescript": "^7.8.3",
-    "@nextcloud/browserslist-config": "^1.0.0",
-    "babel-jest": "^28.1.3",
-    "jest": "^27.0.6",
-    "typedoc": "^0.23.9",
-    "typescript": "^4.0.2"
-  },
-  "browserslist": [
-    "extends @nextcloud/browserslist-config"
-  ]
+    "@rollup/plugin-typescript": "^8.3.4",
+    "jest": "^28.1.3",
+    "jest-environment-jsdom": "^28.1.3",
+    "rollup": "^2.78.1",
+    "tslib": "^2.4.0",
+    "typedoc": "^0.23.10",
+    "typescript": "^4.7.4"
+  }
 }

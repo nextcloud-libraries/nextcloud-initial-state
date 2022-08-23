@@ -1,4 +1,7 @@
-import {loadState} from '../lib/index'
+/**
+ * @jest-environment jsdom
+ */
+const { loadState } = require('../dist/index')
 
 test('throw if nothing found', () => {
     expect(() => loadState('test', 'key')).toThrow(new Error("Could not find initial state key of test"))
