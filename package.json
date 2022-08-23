@@ -1,6 +1,6 @@
 {
   "name": "@nextcloud/initial-state",
-  "version": "2.0.0-next",
+  "version": "2.0.0",
   "description": "Access data from the nextcloud server-side initial state API within apps.",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",

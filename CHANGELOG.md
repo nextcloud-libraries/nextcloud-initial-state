@@ -2,7 +2,8 @@
 
 All notable changes to this project will be documented in this file.
 
-## 2.0.0-next
+## 2.0.0 - 2022-08-23
+
 ### Changed
 - Update dependencies
 - Add rollup to build
