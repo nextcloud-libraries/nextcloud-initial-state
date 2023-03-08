@@ -2,12 +2,13 @@
   "name": "@nextcloud/initial-state",
   "version": "2.0.0",
   "description": "Access data from the nextcloud server-side initial state API within apps.",
-  "main": "dist/index.js",
-  "module": "dist/index.esm.js",
+  "type": "module",
+  "main": "dist/index.cjs",
   "types": "dist/index.d.ts",
   "exports": {
-    "import": "./dist/index.esm.js",
-    "require": "./dist/index.js"
+    "import": "./dist/index.es.mjs",
+    "require": "./dist/index.cjs",
+    "types": "./dist/index.d.ts"
   },
   "files": [
     "dist/"
