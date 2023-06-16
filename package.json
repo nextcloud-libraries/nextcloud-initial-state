@@ -2,17 +2,30 @@
   "name": "@nextcloud/initial-state",
   "version": "2.0.0",
   "description": "Access data from the nextcloud server-side initial state API within apps.",
+  "homepage": "https://github.com/nextcloud/nextcloud-initial-state#readme",
+  "author": "Christoph Wurst",
+  "license": "GPL-3.0-or-later",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nextcloud/nextcloud-initial-state"
+  },
+  "keywords": [
+    "nextcloud"
+  ],
+  "files": [
+    "dist/",
+    "CHANGELOG.md"
+  ],
   "type": "module",
   "main": "dist/index.cjs",
   "types": "dist/index.d.ts",
   "exports": {
-    "import": "./dist/index.es.mjs",
-    "require": "./dist/index.cjs",
-    "types": "./dist/index.d.ts"
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.es.mjs",
+      "require": "./dist/index.cjs"
+    }
   },
-  "files": [
-    "dist/"
-  ],
   "scripts": {
     "build": "rollup --config rollup.config.js",
     "build:doc": "typedoc --out dist/doc lib/index.ts && touch dist/doc/.nojekyll",
@@ -20,16 +33,6 @@
     "dev": "rollup --config rollup.config.js --watch",
     "test": "jest",
     "test:watch": "jest --watchAll"
-  },
-  "keywords": [
-    "nextcloud"
-  ],
-  "homepage": "https://github.com/nextcloud/nextcloud-initial-state#readme",
-  "author": "Christoph Wurst",
-  "license": "GPL-3.0-or-later",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/nextcloud/nextcloud-initial-state"
   },
   "devDependencies": {
     "@rollup/plugin-typescript": "^11.1.1",
