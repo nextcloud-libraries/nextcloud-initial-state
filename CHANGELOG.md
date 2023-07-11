@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file.
 
+## 2.1.0 - 2023-07-23
+### Fixed
+- Set explicit file extensions for package entry files to allow usage with `module` packages \([\#513](https://github.com/nextcloud/nextcloud-initial-state/pull/513)\)
+- Fix package exports to support Typescript projects with module resolution of `node16` or `nodenext` \([\#543](https://github.com/nextcloud/nextcloud-initial-state/pull/543)\)
+
+### Changed
+- Dependency updates
+
 ## 2.0.0 - 2022-08-23
 
 ### Changed
@@ -20,7 +28,7 @@ All notable changes to this project will be documented in this file.
 
 ## 1.2.0 - 2020-04-06
 ### Added
-- Add optional fallback parameter to laodState method
+- Add optional fallback parameter to loadState method
 
 ## 1.1.2 - 2020-04-06
 ### Changed
