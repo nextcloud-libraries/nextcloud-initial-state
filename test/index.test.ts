@@ -1,6 +1,4 @@
-// Might be not available on CI while linting
-// eslint-disable-next-line import/no-unresolved
-import { loadState } from '../dist/index'
+import { loadState } from '../lib'
 import { expect, test } from '@jest/globals'
 
 test('throw if nothing found', () => {
