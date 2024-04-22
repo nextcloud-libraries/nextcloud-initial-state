@@ -1,5 +1,5 @@
+import { expect, test } from 'vitest'
 import { loadState } from '../lib'
-import { expect, test } from '@jest/globals'
 
 test('throw if nothing found', () => {
 	expect(() => loadState('test', 'key')).toThrow(new Error('Could not find initial state key of test'))
