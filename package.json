@@ -1,6 +1,6 @@
 {
   "name": "@nextcloud/initial-state",
-  "version": "2.1.0",
+  "version": "2.2.0",
   "description": "Access data from the nextcloud server-side initial state API within apps.",
   "homepage": "https://github.com/nextcloud/nextcloud-initial-state#readme",
   "author": "Christoph Wurst",
