@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## 2.2.0 - 2024-04-29
+### Changed
+* Update NPM version to LTS v10
+* Migrate to Vite for building and Vitest for testing
+* Lint files using ESLint (+ add CI workflow) and move to all Typescript
+* Add tests and code coverage badge to README
+
 ## 2.1.0 - 2023-07-23
 ### Fixed
 - Set explicit file extensions for package entry files to allow usage with `module` packages \([\#513](https://github.com/nextcloud/nextcloud-initial-state/pull/513)\)
