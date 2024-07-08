@@ -1,3 +1,7 @@
+<!--
+  - SPDX-FileCopyrightText: 2019 Nextcloud GmbH and Nextcloud contributors
+  - SPDX-License-Identifier: GPL-3.0-or-later
+-->	
 # @nextcloud/initial-state
 
 [![npm](https://img.shields.io/npm/v/@nextcloud/initial-state.svg)](https://www.npmjs.com/package/@nextcloud/initial-state)
