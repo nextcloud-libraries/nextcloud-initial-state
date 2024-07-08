@@ -1,5 +1,9 @@
+<!--
+  - SPDX-FileCopyrightText: 2019 Nextcloud GmbH and Nextcloud contributors
+  - SPDX-License-Identifier: GPL-3.0-or-later
+-->	
 # @nextcloud/initial-state
-
+[![REUSE status](https://api.reuse.software/badge/github.com/nextcloud-libraries/nextcloud-initial-state)](https://api.reuse.software/info/github.com/nextcloud-libraries/nextcloud-initial-state)
 [![npm](https://img.shields.io/npm/v/@nextcloud/initial-state.svg)](https://www.npmjs.com/package/@nextcloud/initial-state)
 [![Test status](https://img.shields.io/github/actions/workflow/status/nextcloud-libraries/nextcloud-initial-state/node-test.yml?label=tests)](https://github.com/nextcloud-libraries/nextcloud-initial-state/actions/workflows/node-test.yml?query=branch%3Amaster)
 [![Code coverage](https://img.shields.io/codecov/c/gh/nextcloud-libraries/nextcloud-initial-state/master)](https://app.codecov.io/gh/nextcloud-libraries/nextcloud-initial-state)
