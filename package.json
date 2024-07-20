@@ -39,7 +39,7 @@
   "devDependencies": {
     "@nextcloud/eslint-config": "^8.4.1",
     "@nextcloud/vite-config": "^2.1.0",
-    "@types/node": "^20.14.10",
+    "@types/node": "^20.14.11",
     "@vitest/coverage-v8": "^1.6.0",
     "eslint": "^8.57.0",
     "typedoc": "^0.26.4",
