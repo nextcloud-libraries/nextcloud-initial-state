@@ -37,7 +37,7 @@
     "test:watch": "vitest watch"
   },
   "devDependencies": {
-    "@nextcloud/eslint-config": "^8.4.1",
+    "@nextcloud/eslint-config": "^8.4.2",
     "@nextcloud/vite-config": "^2.2.2",
     "@types/node": "^20.14.12",
     "@vitest/coverage-v8": "^1.6.0",
