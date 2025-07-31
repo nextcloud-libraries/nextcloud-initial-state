@@ -10,7 +10,15 @@
  * @throws if the key can't be found
  */
 export function loadState<T>(app: string, key: string, fallback?: T): T {
-	const elem = document.querySelector<HTMLInputElement>(`#initial-state-${app}-${key}`)
+	const selector = `#initial-state-${app}-${key}`
+	if (window._nc_initial_state?.has(selector)) {
+		return window._nc_initial_state.get(selector) as T
+	} else if (!window._nc_initial_state) {
+		window._nc_initial_state = new Map<string, unknown>()
+	}
+
+	const elem = document.querySelector<HTMLInputElement>(selector)
+
 	if (elem === null) {
 		if (fallback !== undefined) {
 			return fallback
@@ -19,7 +27,9 @@ export function loadState<T>(app: string, key: string, fallback?: T): T {
 	}
 
 	try {
-		return JSON.parse(atob(elem.value))
+		const parsedValue = JSON.parse(atob(elem.value))
+		window._nc_initial_state.set(selector, parsedValue)
+		return parsedValue
 	} catch (e) {
 		throw new Error(`Could not parse initial state ${key} of ${app}`)
 	}
