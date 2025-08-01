@@ -6,6 +6,25 @@
 
 All notable changes to this project will be documented in this file.
 
+## 3.0.0 - 2025-08-01
+### Breaking
+This package now is a pure ES modules package and does no longer provide the CommonJS entry point.
+
+### Added
+* feat: cache parsed InitialState results to Map for later use \([\#872](https://github.com/nextcloud-libraries/nextcloud-initial-state/pull/872)\)
+
+### Fixed
+* fix: return fallback if value cannot be parsed \([\#881](https://github.com/nextcloud-libraries/nextcloud-initial-state/pull/881)\)
+
+### Other Changes
+* chore!: simplified building process as no bundling is needed \([\#875](https://github.com/nextcloud-libraries/nextcloud-initial-state/pull/875)\)
+* chore: adjust `engines` versions to support wider range \([\#](https://github.com/nextcloud-libraries/nextcloud-initial-state/pull/874)\)
+* chore: add SPDX header \([\#708](https://github.com/nextcloud-libraries/nextcloud-initial-state/pull/708)\)
+* chore: update `package.json` \([\#873](https://github.com/nextcloud-libraries/nextcloud-initial-state/pull/873)\)
+* chore: migrate to ESLint v9 \([\#879](https://github.com/nextcloud-libraries/nextcloud-initial-state/pull/879)\)
+* ci: update workflows from organization \([\#876](https://github.com/nextcloud-libraries/nextcloud-initial-state/pull/876)\)
+* ci: add workflow to check Typescript \([\#878](https://github.com/nextcloud-libraries/nextcloud-initial-state/pull/878)\)
+
 ## 2.2.0 - 2024-04-29
 ### Changed
 * Update NPM version to LTS v10

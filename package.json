@@ -1,6 +1,6 @@
 {
   "name": "@nextcloud/initial-state",
-  "version": "2.2.0",
+  "version": "3.0.0",
   "description": "Access data from the nextcloud server-side initial state API within apps.",
   "keywords": [
     "nextcloud"
