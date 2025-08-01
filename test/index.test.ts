@@ -46,3 +46,31 @@ test('returns cached value with consequent calls', () => {
 
 	expect(JSON.parse).toHaveBeenCalledTimes(1)
 })
+
+test('throws if state cannot be parsed and no fallback is provided', () => {
+	const errorLog = vi.spyOn(console, 'error')
+	errorLog.mockImplementationOnce(() => {})
+
+	appendInput('app', 'key', 'value')
+	const spy = vi.spyOn(JSON, 'parse')
+	spy.mockImplementationOnce(() => {
+		throw new Error('mocked parsing exception')
+	})
+
+	expect(() => loadState('app', 'key')).toThrowError('Could not parse initial state key of app')
+	expect(errorLog).toHaveBeenCalledOnce()
+})
+
+test('returns fallback if state cannot be parsed but fallback is provided', () => {
+	const errorLog = vi.spyOn(console, 'error')
+	errorLog.mockImplementationOnce(() => {})
+
+	appendInput('app', 'key', 'value')
+	const spy = vi.spyOn(JSON, 'parse')
+	spy.mockImplementationOnce(() => {
+		throw new Error('mocked parsing exception')
+	})
+
+	expect(loadState('app', 'key', 'fallback')).toBe('fallback')
+	expect(errorLog).toHaveBeenCalledOnce()
+})

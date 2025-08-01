@@ -31,6 +31,11 @@ export function loadState<T>(app: string, key: string, fallback?: T): T {
 		window._nc_initial_state.set(selector, parsedValue)
 		return parsedValue
 	} catch (error) {
+		console.error('[@nextcloud/initial-state] Could not parse initial state', { key, app, error })
+
+		if (fallback !== undefined) {
+			return fallback
+		}
 		throw new Error(`Could not parse initial state ${key} of ${app}`, { cause: error })
 	}
 }
