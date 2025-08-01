@@ -2,8 +2,23 @@
  * SPDX-FileCopyrightText: 2023 Nextcloud GmbH and Nextcloud contributors
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
-import { expect, test } from 'vitest'
+import { expect, test, vi } from 'vitest'
 import { loadState } from '../lib'
+
+/**
+ * Mock initial state input elements
+ * @param app first part of the key
+ * @param key second part of the key
+ * @param value value to be stored
+ */
+function appendInput(app: string, key: string, value: string) {
+	const input = document.createElement('input')
+	input.setAttribute('type', 'hidden')
+	input.setAttribute('id', `initial-state-${app}-${key}`)
+	input.setAttribute('value', btoa(JSON.stringify(value)))
+	// eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+	document.querySelector('body')!.appendChild(input)
+}
 
 test('throw if nothing found', () => {
 	expect(() => loadState('test', 'key')).toThrow(new Error('Could not find initial state key of test'))
@@ -14,14 +29,21 @@ test('return default if provided', () => {
 })
 
 test('find correct value', () => {
-	const input = document.createElement('input')
-	input.setAttribute('type', 'hidden')
-	input.setAttribute('id', 'initial-state-test-key')
-	input.setAttribute('value', btoa(JSON.stringify('foo')))
-	// eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-	document.querySelector('body')!.appendChild(input)
+	appendInput('test', 'key', 'foo')
 
 	const state = loadState('test', 'key')
 
 	expect(state).toBe('foo')
+})
+
+test('returns cached value with consequent calls', () => {
+	vi.spyOn(JSON, 'parse')
+
+	appendInput('test', 'cachedKey', 'foo')
+
+	for (let i = 0; i < 10; i++) {
+		loadState('test', 'cachedKey')
+	}
+
+	expect(JSON.parse).toHaveBeenCalledTimes(1)
 })
