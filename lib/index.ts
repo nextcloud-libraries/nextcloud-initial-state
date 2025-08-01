@@ -30,7 +30,7 @@ export function loadState<T>(app: string, key: string, fallback?: T): T {
 		const parsedValue = JSON.parse(atob(elem.value))
 		window._nc_initial_state.set(selector, parsedValue)
 		return parsedValue
-	} catch (e) {
-		throw new Error(`Could not parse initial state ${key} of ${app}`)
+	} catch (error) {
+		throw new Error(`Could not parse initial state ${key} of ${app}`, { cause: error })
 	}
 }

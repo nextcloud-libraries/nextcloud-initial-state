@@ -4,5 +4,5 @@
  */
 
 declare interface Window {
-    _nc_initial_state?: Map<string, unknown>
+	_nc_initial_state?: Map<string, unknown>
 }

@@ -2,8 +2,9 @@
  * SPDX-FileCopyrightText: 2023 Nextcloud GmbH and Nextcloud contributors
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
+
 import { expect, test, vi } from 'vitest'
-import { loadState } from '../lib'
+import { loadState } from '../lib/index.ts'
 
 /**
  * Mock initial state input elements
@@ -16,7 +17,6 @@ function appendInput(app: string, key: string, value: string) {
 	input.setAttribute('type', 'hidden')
 	input.setAttribute('id', `initial-state-${app}-${key}`)
 	input.setAttribute('value', btoa(JSON.stringify(value)))
-	// eslint-disable-next-line @typescript-eslint/no-non-null-assertion
 	document.querySelector('body')!.appendChild(input)
 }
 
@@ -32,7 +32,6 @@ test('find correct value', () => {
 	appendInput('test', 'key', 'foo')
 
 	const state = loadState('test', 'key')
-
 	expect(state).toBe('foo')
 })
 
