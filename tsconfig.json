@@ -1,15 +1,17 @@
 {
-    "include": [
-        "./lib/**.ts"
-    ],
+    "$schema": "https://json.schemastore.org/tsconfig",
+    "include": ["lib"],
     "compilerOptions": {
-        "allowSyntheticDefaultImports": true,
-        "moduleResolution": "Bundler",
-        "target": "ESNext",
-        "module": "ESNext",
-        "declaration": true,
+        "rootDir": "lib/",
+        "outDir": "./dist",
         "strict": true,
-        "noImplicitAny": false,
-        "outDir": "./dist"
+        "declaration": true,
+        "allowSyntheticDefaultImports": true,
+        "erasableSyntaxOnly": true,
+        "rewriteRelativeImportExtensions": true,
+        "allowImportingTsExtensions": true,
+        "moduleResolution": "bundler",
+        "target": "ESNext",
+        "module": "ESNext"
     }
 }
