@@ -10,7 +10,7 @@
  * @throws if the key can't be found
  */
 export function loadState<T>(app: string, key: string, fallback?: T): T {
-	const elem = <HTMLInputElement>document.querySelector(`#initial-state-${app}-${key}`)
+	const elem = document.querySelector<HTMLInputElement>(`#initial-state-${app}-${key}`)
 	if (elem === null) {
 		if (fallback !== undefined) {
 			return fallback
