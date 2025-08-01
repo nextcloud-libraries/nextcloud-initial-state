@@ -10,9 +10,3 @@ path = ["package-lock.json", "package.json", "tsconfig.json"]
 precedence = "aggregate"
 SPDX-FileCopyrightText = "2019 Nextcloud GmbH and Nextcloud contributors"
 SPDX-License-Identifier = "GPL-3.0-or-later"
-
-[[annotations]]
-path = [".eslintrc.json"]
-precedence = "aggregate"
-SPDX-FileCopyrightText = "2023 Nextcloud GmbH and Nextcloud contributors"
-SPDX-License-Identifier = "GPL-3.0-or-later"
