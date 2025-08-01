@@ -34,7 +34,8 @@
     "lint:fix": "eslint --fix lib test *.ts",
     "test": "vitest run",
     "test:coverage": "vitest run --coverage",
-    "test:watch": "vitest watch"
+    "test:watch": "vitest watch",
+    "ts:check": "tsc --noEmit"
   },
   "devDependencies": {
     "@nextcloud/eslint-config": "^8.4.2",
