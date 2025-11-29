@@ -38,7 +38,7 @@
   "devDependencies": {
     "@nextcloud/eslint-config": "^9.0.0-rc.5",
     "@types/node": "^24.10.1",
-    "@vitest/coverage-v8": "^4.0.13",
+    "@vitest/coverage-v8": "^4.0.14",
     "eslint": "^9.39.1",
     "jsdom": "^27.2.0",
     "typedoc": "^0.28.14",
