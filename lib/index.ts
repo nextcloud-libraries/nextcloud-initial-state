@@ -7,7 +7,7 @@
  * @param app app ID, e.g. "mail"
  * @param key name of the property
  * @param fallback optional parameter to use as default value
- * @throws if the key can't be found
+ * @throws {Error} if the key can't be found
  */
 export function loadState<T>(app: string, key: string, fallback?: T): T {
 	const selector = `#initial-state-${app}-${key}`
